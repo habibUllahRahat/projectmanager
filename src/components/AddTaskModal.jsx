@@ -43,7 +43,13 @@ export default function AddTaskModal({
 				return
 			}
 		}
-
+		taskToEdit
+			? toast.success("Task updated", {
+					position: "bottom-right",
+			  })
+			: toast.success("Task added", {
+					position: "bottom-right",
+			  })
 		dispatch({
 			type: taskToEdit ? "EDIT_TASK" : "ADD_TASK",
 			task: task,
